@@ -4,9 +4,9 @@ console.log(Arr)
 var v = parseInt(prompt("Introduce el valor que deseas insertar: "));
 var p = parseInt(prompt("Introduce la posición en la que deseas que se inserte"));
 
-insert(p,v)
+insertardatos(p,v)
 
-function insert(p,v)
+function insertardatos(p,v)
 
 	{
 		Arr.splice(p,0,v)
