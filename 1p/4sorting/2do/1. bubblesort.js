@@ -1,6 +1,7 @@
 var start = Date.now();
-console.log(start)
 let arr = Array.from({length: 10000}, () => Math.floor(Math.random() * 10000));
+console.log("array random")
+console.log(arr)
 var s = 0;
 
 function swap(i, o) {
@@ -23,8 +24,8 @@ function bubble(arr){
 	
 }
 bubble(arr)
+console.log("array ordenado")
 console.log(arr)
 console.log("se tomo " + s + " pasos");
 var end = Date.now();
-console.log(end)
 console.log("Con una duración de  " + (end - start) + " milisegundos")
