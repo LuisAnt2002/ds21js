@@ -1,33 +1,55 @@
-let queue = [];
-{
-var n1 = parseInt(prompt("ingrese un numero para agregarlo a la cola\n"));
-queue.push(n1);
-console.log(queue); 
- 
-var n2 = parseInt(prompt("ingrese otro\n"));
-queue.push(n2);
-console.log(queue);
-
-var n3 = parseInt(prompt("ingrese otro\n"));
-queue.push(n3);
-console.log(queue);
- 
-var a;
-	do
-	{
-		var a = parseInt(prompt("¿Que desea hacer?(ingrese 1,2 o 3)\n 1)Agregar otro numero a la cola\n 2)Eliminar un numero de la cola\n 3)Salir"));
-		if (a==1){
-			var i = parseInt(prompt("ingrese el numero para agregarlo\n"));
-			queue.push(i);
-			console.log("se agrego un numero a la cola"); 
-			console.log(queue); 
-			}else
-				if(a==2){
-				queue.shift(a);
-				console.log("se elimino un numero de la cola");
-				console.log(queue); 
-				}
- 
-	}while (a != 3)	
-	console.log("cola resultante: "+queue);
+function Queue() {
+this.dataStore = [];
+this.enqueue = enqueue;
+this.dequeue = dequeue;
+this.front = front;
+this.back = back;
+this.toString = toString;
+this.empty = empty;
 }
+function enqueue(element) {
+this.dataStore.push(element);
+}
+function dequeue() {
+return this.dataStore.shift();
+}
+function front() {
+return this.dataStore[0];
+}
+function back() {
+return this.dataStore[this.dataStore. length-1];
+}
+function toString() {
+var retStr = "";
+for (var i = 0; i < this.dataStore.length; ++i) {
+retStr += this.dataStore[i] + "\n";
+}
+return retStr;
+}
+function empty() {
+	if (this.dataStore.length = 0) {
+		return true;
+	}
+	else {
+		return false;
+		}
+	}
+
+
+
+var q = new Queue();
+var n1 = String(prompt("ingrese un nombre para agregarlo a la cola\n"));
+q.enqueue(n1);
+
+var n2 = String(prompt("ingrese otro\n"));
+q.enqueue(n2);
+
+var n3 = String(prompt("ingrese otro\n"));
+q.enqueue(n3);
+
+console.log("La cola esta compuesta por:\n "+q.toString());
+q.dequeue();
+console.log("Se ha eliminado al primero de la cola");
+console.log("La cola ahora esta compuesta por:\n "+q.toString());
+console.log("El primero de la cola es: " + q.front());
+console.log("El ultimo de la cola es: " + q.back());
