@@ -1,3 +1,9 @@
+//
+// imports ES5
+// Node5es (data)
+// Linked
+//
+
 function Queue(n) {
     //props
     this.linked = new Linked()    
