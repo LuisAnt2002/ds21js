@@ -60,17 +60,17 @@ function dequeue()
     deleted=currNode                         
     currNode=currNode.next
     this.head=currNode     
-    console.log("Se ha eliminado a "+deleted.element+" el primero de la cola ");        
+         
 }
 
 function front() 
 {
-    console.log("El primero de la cola es "+ this.head.element); 
+    return this.head.element; 
 }
 
 function back() 
 {
-    console.log("El ultimo de la cola es "+ this.tail.element); 
+    return this.tail.element; 
 }
 
 function toString() 
@@ -99,15 +99,17 @@ var p=0;
 var q = new queue();
    	for(i=0; i<10000; i++)
     	{
-		q.enqueue((Math.random()*10000).toFixed(0));
-		p++
-	}
+		    q.enqueue((Math.random()*10000).toFixed(0));
+		    p++
+		}
 	
 var end = Date.now();
-q.toString()
+console.log("La cola esta compuesta por:\n ");
+q.toString();
 console.log("El programa tomo "+(end-start).toFixed(2)+" milisegundos");
 console.log("El programa tomo "+ p +" pasos");
-q.front()
-q.back()
-q.dequeue()
-q.front()
+console.log("El primero de la cola es: " + q.front());
+q.dequeue();
+console.log("Se ha eliminado al primero de la cola");
+console.log("El primero de la cola ahora es: " + q.front());
+console.log("El ultimo de la cola es: " + q.back());
