@@ -1,7 +1,6 @@
 var start = Date.now();
- 
-class Node 
 
+class Node
 {     
 	 constructor(element,next=null)
 	  {         
@@ -11,14 +10,13 @@ class Node
 } 
 
 class Llist
-
 {     
-    constructor()
-	    {         
+   constructor()
+	   {         
 	        this.head=null         
 	        this.size=0 
 	        this.tail=null    
-	    }
+	   }
 }
 
 function queue() 
@@ -57,57 +55,59 @@ function enqueue(element)
 
 function dequeue() 
 {
-    var current=this.head
-    current=this.head        
-    deleted=current                         
-    current=current.next
-    this.head=current     
-    console.log("Se ha eliminado al primero de la cola"+ deleted.data)        
+    var currNode=this.head
+    currNode=this.head        
+    deleted=currNode                         
+    currNode=currNode.next
+    this.head=currNode     
+    console.log("Se ha eliminado a "+deleted.element+" el primero de la cola ");        
 }
 
 function front() 
 {
-    return this.head.element;
+    console.log("El primero de la cola es "+ this.head.element); 
 }
 
 function back() 
 {
-    return this.tail.element;
+    console.log("El ultimo de la cola es "+ this.tail.element); 
 }
 
 function toString() 
 {
-    var current=this.head 
-    while(current)
+    var currNode=this.head 
+    while(currNode)
 	    {         
-	        console.log(current.element)         
-	        current=current.next         
+	        console.log(currNode.element)         
+	        currNode=currNode.next         
 	    }    
 }
     
 function empty() 
 {
-    if (this.dataStore.length == 0) 
+    if (this.dataStore.length = 0) 
 	    {
-	        return true;
+	      return true;
 	    }
     else
 	    {
-	        return false;
+	      return false;
 	    }
 }
 
-let p=0;
+var p=0;
 var q = new queue();
-for(i=0;i<7;i++)
-	{
-    	for(j=0; j<10000; j++)
-    		{
-		        q.enqueue((Math.random()*100).toFixed(0));
-		        p++
-			 }
-	}
+   	for(i=0; i<10000; i++)
+    	{
+		    q.enqueue((Math.random()*10000).toFixed(0));
+		    p++
+		}
 	
 var end = Date.now();
-console.log("El programa tomo "+((end-start)/7).toFixed(2)+" milisegundos");
-console.log("El programa tomo "+p+"pasos");
+q.toString()
+console.log("El programa tomo "+(end-start).toFixed(2)+" milisegundos");
+console.log("El programa tomo "+ p +" pasos");
+q.front()
+q.back()
+q.dequeue()
+q.front()
