@@ -99,9 +99,9 @@ var p=0;
 var q = new queue();
    	for(i=0; i<10000; i++)
     	{
-		    q.enqueue((Math.random()*10000).toFixed(0));
-		    p++
-		}
+		q.enqueue((Math.random()*10000).toFixed(0));
+		p++
+	}
 	
 var end = Date.now();
 q.toString()
